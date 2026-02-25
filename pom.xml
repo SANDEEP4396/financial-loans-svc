@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>com.financial.loans.microservice</groupId>
 	<artifactId>loans-svc</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>loans-svc</name>
 	<description>Demo project for Loans Microservice</description>
