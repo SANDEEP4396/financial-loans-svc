@@ -1,6 +1,12 @@
 server:
   port: 8090
 spring:
+  application:
+    name: "loans"
+  profiles:
+    active: "prod"
+  config:
+    import: "optional:configserver:http://localhost:8087/"
   datasource:
     #H2 DB URL
     url: jdbc:h2:mem:testdb
