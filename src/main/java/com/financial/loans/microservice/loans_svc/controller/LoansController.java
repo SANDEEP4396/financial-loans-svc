@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.*;
 )
 @RestController
 @Validated
-@RequestMapping(path = "/api/loans", produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
 public class LoansController {
 
     private final ILoansService iLoansService;
