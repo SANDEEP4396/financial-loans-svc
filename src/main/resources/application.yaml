@@ -52,6 +52,17 @@ management:
   info:
     env:
       enabled: true
+  endpoint:
+    shutdown:
+      enabled: true # This configuration enables the shutdown endpoint, which allows you to gracefully shut down the application by sending a POST request to the /actuator/shutdown endpoint. This can be useful for managing the lifecycle of the application and performing cleanup tasks before shutting down.
+    health:
+      probes:
+        enabled: true
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
 
 # Registers with Eureka server for service discovery and sends heartbeats to indicate that the service is alive and healthy. This allows other services to discover and communicate with this service through the Eureka server.
 eureka:
@@ -75,3 +86,11 @@ info:
 endpoints:
   shutdown:
     enabled: true
+
+logging:
+  level:
+    com:
+      financial:
+        loans:
+          microservice:
+            loans_svc: DEBUG
