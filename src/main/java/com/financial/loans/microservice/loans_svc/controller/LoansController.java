@@ -14,6 +14,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
+import jakarta.ws.rs.BadRequestException;
+import jakarta.ws.rs.InternalServerErrorException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -173,9 +175,11 @@ public class LoansController {
     }
 
     @GetMapping("/contact-info")
-    public ResponseEntity<LoansContactInfoDto> getContactInfo() {
+    public ResponseEntity<LoansContactInfoDto> getContactInfo()  {
+        LOGGER.debug("Invoking getContactInfo endpoint to fetch contact information for loans service");
+//        throw new BadRequestException();
         return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(loansContactInfoDto);
+               .status(HttpStatus.OK)
+              .body(loansContactInfoDto);
     }
 }
