@@ -63,7 +63,9 @@ management:
       enabled: true
     liveness-state:
       enabled: true
-
+  metrics:
+    tags:
+      application: ${spring.application.name}
 # Registers with Eureka server for service discovery and sends heartbeats to indicate that the service is alive and healthy. This allows other services to discover and communicate with this service through the Eureka server.
 eureka:
   instance:
