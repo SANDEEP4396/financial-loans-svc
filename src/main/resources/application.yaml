@@ -96,3 +96,6 @@ logging:
         loans:
           microservice:
             loans_svc: DEBUG
+  pattern:
+    # %5p: This part of the pattern includes the log level (e.g., DEBUG, INFO, WARN, ERROR) in the log output, formatted to take up at least 5 characters. This helps to align the log levels in the output for better readability.
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
